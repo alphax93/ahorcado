@@ -31,11 +31,10 @@ def check_letter(word,letter):
 
 def fill_word(word,secret_word,letter):
     last=0
-    for c in secret_word:
-        if c == letter:
-            index = secret_word.index(c,last)
-            word[index]=c
-            last=index+1
+    for i in range(len(secret_word)):
+        if secret_word[i] == letter:
+            word[i]=letter
+            
     
 def add_part(board,chances):
     if chances==6:
@@ -84,4 +83,4 @@ while not solved and chances>0:
 if solved:
     print("¡¡¡FELICIDADES!!! Has encontrado la palabra secreta: " + " ".join(word) )
 else:
-    print("¡¡¡NOOOO!!! HAS MATADO A KENNY")
+    print("¡¡¡HAS PERIDOD!!! La palabra secreta era: " + " ".join(secret_word))
